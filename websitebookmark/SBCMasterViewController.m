@@ -31,10 +31,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = nil;
+    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.rightBarButtonItem = nil;
     self.detailViewController = (SBCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     NSString *path = [[NSBundle mainBundle]
                       pathForResource:@"Websites" ofType:@"plist"];
@@ -75,8 +76,10 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    //NSDate *object = _objects[indexPath.row];
+    
+    //cell.textLabel.text = [object description];
+    cell.textLabel.text=self.names[indexPath.row];
     return cell;
 }
 
@@ -115,7 +118,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = self.websites.
+    
+    NSString* url=[self.websites objectForKey:self.names[indexPath.row]];
+    self.detailViewController.detailItem = url;
+    //self.detailViewController.detailItem = self.websites.
 }
 
 @end

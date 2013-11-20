@@ -11,6 +11,7 @@
 @interface SBCDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
 @implementation SBCDetailViewController
@@ -34,10 +35,19 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    NSURL *url = [NSURL URLWithString:self.detailItem];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    //NSString *hi=[self.detailItem string];
+    
+    //NSLog(@"%@",hi);
+    NSLog(@"%@",url);
+    [self.webView loadRequest:request];
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
+        self.navigationItem.title = [url absoluteString];
     }
+    
+
 }
 
 - (void)viewDidLoad
