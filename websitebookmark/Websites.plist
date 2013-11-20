@@ -12,5 +12,25 @@
 	<string>http://www.nba.com/sixers/</string>
 	<key>Raptors</key>
 	<string>http://www.nba.com/raptors/</string>
+	<key>Bulls</key>
+	<string>http://www.nba.com/bulls/</string>
+	<key>Cavaliers</key>
+	<string>http://www.nba.com/cavaliers/</string>
+	<key>Pistons</key>
+	<string>http://www.nba.com/pistons/</string>
+	<key>Pacers</key>
+	<string>http://www.nba.com/pacers/</string>
+	<key>Bucks</key>
+	<string>http://www.nba.com/bucks/</string>
+	<key>Hawks</key>
+	<string>http://www.nba.com/hawks/</string>
+	<key>Heat</key>
+	<string>http://www.nba.com/heat/</string>
+	<key>Bobcats</key>
+	<string>http://www.nba.com/bobcats/</string>
+	<key>Wizards</key>
+	<string>http://www.nba.com/wizards/</string>
+	<key>Magic</key>
+	<string>http://www.nba.com/magic/</string>
 </dict>
 </plist>

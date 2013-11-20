@@ -8,9 +8,11 @@
 
 #import "SBCDetailViewController.h"
 
-@interface SBCDetailViewController ()
+@interface SBCDetailViewController () <UIWebViewDelegate>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
@@ -32,15 +34,21 @@
     }        
 }
 
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [self.activityIndicator startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.activityIndicator stopAnimating];
+}
+
 - (void)configureView
 {
     // Update the user interface for the detail item.
     NSURL *url = [NSURL URLWithString:self.detailItem];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //NSString *hi=[self.detailItem string];
-    
-    //NSLog(@"%@",hi);
-    NSLog(@"%@",url);
+
+    //NSLog(@"%@",url);
     [self.webView loadRequest:request];
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
@@ -53,6 +61,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem.title = @"Websites";
+    //[self.webView setAutoresizesSubviews:YES];
+    self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    //self.webView.scalesPageToFit = YES;
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
@@ -67,7 +80,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Websites", @"Websites");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
