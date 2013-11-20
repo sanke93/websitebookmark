@@ -19,6 +19,8 @@
 		FD23811A183C792000F8FC90 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD238118183C792000F8FC90 /* MainStoryboard.storyboard */; };
 		FD23811D183C792000F8FC90 /* SBCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23811C183C792000F8FC90 /* SBCMasterViewController.m */; };
 		FD238120183C792000F8FC90 /* SBCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23811F183C792000F8FC90 /* SBCDetailViewController.m */; };
+		FD238128183C7A7F00F8FC90 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD238126183C7A7F00F8FC90 /* Icon.png */; };
+		FD238129183C7A7F00F8FC90 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD238127183C7A7F00F8FC90 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FD23811C183C792000F8FC90 /* SBCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCMasterViewController.m; sourceTree = "<group>"; };
 		FD23811E183C792000F8FC90 /* SBCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBCDetailViewController.h; sourceTree = "<group>"; };
 		FD23811F183C792000F8FC90 /* SBCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBCDetailViewController.m; sourceTree = "<group>"; };
+		FD238126183C7A7F00F8FC90 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FD238127183C7A7F00F8FC90 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		FD2380F4183C791F00F8FC90 = {
 			isa = PBXGroup;
 			children = (
+				FD238126183C7A7F00F8FC90 /* Icon.png */,
+				FD238127183C7A7F00F8FC90 /* Icon@2x.png */,
 				FD238106183C791F00F8FC90 /* websitebookmark */,
 				FD2380FF183C791F00F8FC90 /* Frameworks */,
 				FD2380FE183C791F00F8FC90 /* Products */,
@@ -169,6 +175,8 @@
 				FD238115183C792000F8FC90 /* Default@2x.png in Resources */,
 				FD238117183C792000F8FC90 /* Default-568h@2x.png in Resources */,
 				FD23811A183C792000F8FC90 /* MainStoryboard.storyboard in Resources */,
+				FD238128183C7A7F00F8FC90 /* Icon.png in Resources */,
+				FD238129183C7A7F00F8FC90 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
