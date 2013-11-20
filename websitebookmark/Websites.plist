@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Celtics</key>
+	<string>http://www.nba.com/celtics/</string>
+	<key>Nets</key>
+	<string>http://www.nba.com/nets/</string>
+	<key>Knicks</key>
+	<string>http://www.nba.com/knicks/</string>
+	<key>Sixers</key>
+	<string>http://www.nba.com/sixers/</string>
+	<key>Raptors</key>
+	<string>http://www.nba.com/raptors/</string>
+</dict>
+</plist>

@@ -13,6 +13,9 @@
 @interface SBCMasterViewController () {
     NSMutableArray *_objects;
 }
+
+@property (strong,nonatomic) NSDictionary *websites;
+@property (strong,nonatomic) NSArray *names;
 @end
 
 @implementation SBCMasterViewController
@@ -33,6 +36,11 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (SBCDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    NSString *path = [[NSBundle mainBundle]
+                      pathForResource:@"Websites" ofType:@"plist"];
+    self.websites = [NSDictionary dictionaryWithContentsOfFile:path];
+    self.names = [self.websites
+                  keysSortedByValueUsingSelector:@selector(compare:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.names.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -106,8 +114,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    //NSDate *object = _objects[indexPath.row];
+    self.detailViewController.detailItem = self.websites.
 }
 
 @end
